@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>w2-core</module>
+        <module>w2-demo-nacos-spring-cloud-config</module>
     </modules>
 
     <properties>

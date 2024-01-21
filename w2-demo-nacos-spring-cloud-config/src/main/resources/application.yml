@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo-config
+  config:
+    import: optional:nacos:${spring.cloud.nacos.config.name}
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:18848
+        name: demo.yaml
+        group: DEFAULT_GROUP
+        file-extension: yaml
