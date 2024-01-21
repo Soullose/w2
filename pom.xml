@@ -11,6 +11,7 @@
     <modules>
         <module>w2-core</module>
         <module>w2-demo-nacos-spring-cloud-config</module>
+        <module>w2-demo-nacos-discovery</module>
     </modules>
 
     <properties>
