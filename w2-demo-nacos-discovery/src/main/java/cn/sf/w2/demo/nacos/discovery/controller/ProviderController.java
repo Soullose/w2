@@ -10,20 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class ProviderController {
 
-    @Value("${useLocalCache:false}")
-    private boolean useLocalCache;
+	@Value("${useLocalCache:false}")
+	private boolean useLocalCache;
 
+	@Value("${test:1}")
+	private String test;
 
-    @Value("${test:1}")
-    private String test;
+	@RequestMapping("/get")
+	public boolean get() {
+		return useLocalCache;
+	}
 
-    @RequestMapping("/get")
-    public boolean get() {
-        return useLocalCache;
-    }
-
-    @RequestMapping("/get1")
-    public String get1() {
-        return test;
-    }
+	@RequestMapping("/get1")
+	public String get1() {
+		return test;
+	}
 }
