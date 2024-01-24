@@ -13,6 +13,7 @@
         <module>w2-demo-nacos-spring-cloud-config</module>
         <module>w2-demo-nacos-discovery</module>
         <module>w2-demo-nacos-consumer</module>
+        <module>w2-quartz</module>
     </modules>
 
     <properties>
