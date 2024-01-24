@@ -23,17 +23,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- quartz -->
+
+
         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
 
+        <!-- quartz -->
+<!--        <dependency>-->
+<!--            <groupId>org.quartz-scheduler</groupId>-->
+<!--            <artifactId>quartz</artifactId>-->
+<!--        </dependency>-->
+
         <!-- quartz-jobs -->
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz-jobs</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.quartz-scheduler</groupId>-->
+<!--            <artifactId>quartz-jobs</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
