@@ -3,3 +3,12 @@ server:
 spring:
   application:
     name: w2-quartz
+  config:
+    import: optional:nacos:${spring.cloud.nacos.config.name}
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:18848
+        name: w2-quartz.yaml
+        group: DEFAULT_GROUP
+        file-extension: yaml

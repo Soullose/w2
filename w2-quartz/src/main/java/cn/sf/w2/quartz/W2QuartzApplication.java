@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class W2QuartzApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(W2QuartzApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(W2QuartzApplication.class, args);
+	}
 }

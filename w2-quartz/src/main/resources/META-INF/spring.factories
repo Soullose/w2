@@ -1,0 +1,5 @@
+
+
+#org.springframework.context.ApplicationListener=cn.sf.w2.quartz.test.W2QuartzJobProvider
+
+
