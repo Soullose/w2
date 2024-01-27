@@ -14,6 +14,7 @@
         <module>w2-demo-nacos-discovery</module>
         <module>w2-demo-nacos-consumer</module>
         <module>w2-quartz</module>
+        <module>w2-doc</module>
     </modules>
 
     <properties>
@@ -27,6 +28,8 @@
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
 
         <caffeine-version>3.1.8</caffeine-version>
+        <knife4j-aggregation-version>4.4.0</knife4j-aggregation-version>
+        <knife4j-version>4.4.0</knife4j-version>
     </properties>
 
     <dependencyManagement>
@@ -60,6 +63,19 @@
                 <groupId>com.github.ben-manes.caffeine</groupId>
                 <artifactId>caffeine</artifactId>
                 <version>${caffeine-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+                <version>${knife4j-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-aggregation-spring-boot-starter</artifactId>
+                <!--在引用时请在maven中央仓库搜索aggregation最新版本号-->
+                <version>${knife4j-aggregation-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

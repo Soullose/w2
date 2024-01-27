@@ -1,0 +1,14 @@
+server:
+  port: 8000
+knife4j:
+  enable-aggregation: true
+  nacos:
+    enable: true
+    service-url: http://localhost:18848/nacos/
+    routes:
+      - name: 消费服务nacos  #微服务在聚合文档中的名称
+        serviceName: w2-demo-consumer # 微服务的服务名
+        location: /v2/api-docs # 微服务文档资源路径
+      - name: 提供服务nacos
+        serviceName: w2-demo-discovery
+        location: /v2/api-docs
