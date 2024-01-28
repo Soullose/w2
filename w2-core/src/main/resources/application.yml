@@ -1,0 +1,20 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    url: jdbc:sqlite:/dev/IdeaProjects/w2/w2-core/db/w2.db
+    driver-class-name: org.sqlite.JDBC
+    username:
+    password:
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
+
+
+  h2:
+    console:
+      enabled: true
