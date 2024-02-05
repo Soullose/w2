@@ -27,9 +27,13 @@
         <spring-cloud.version>2021.0.5</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
 
+        <querydsl.version>5.1.0</querydsl.version>
+
         <caffeine-version>3.1.8</caffeine-version>
         <knife4j-aggregation-version>4.4.0</knife4j-aggregation-version>
         <knife4j-version>4.4.0</knife4j-version>
+
+        <jsonwebtoken-version>0.12.3</jsonwebtoken-version>
     </properties>
 
     <dependencyManagement>
@@ -59,6 +63,31 @@
                 <scope>import</scope>
             </dependency>
 
+
+            <dependency>
+                <groupId>com.querydsl</groupId>
+                <artifactId>querydsl-core</artifactId>
+                <version>${querydsl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.querydsl</groupId>
+                <artifactId>querydsl-codegen</artifactId>
+                <version>${querydsl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.querydsl</groupId>
+                <artifactId>querydsl-jpa</artifactId>
+                <version>${querydsl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.querydsl</groupId>
+                <artifactId>querydsl-apt</artifactId>
+                <version>${querydsl.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
                 <artifactId>caffeine</artifactId>
@@ -77,6 +106,26 @@
                 <!--在引用时请在maven中央仓库搜索aggregation最新版本号-->
                 <version>${knife4j-aggregation-version}</version>
             </dependency>
+
+            <!--        JWT-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jsonwebtoken-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jsonwebtoken-version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jsonwebtoken-version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
