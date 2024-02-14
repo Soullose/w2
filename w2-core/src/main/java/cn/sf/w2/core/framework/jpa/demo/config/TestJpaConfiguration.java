@@ -11,8 +11,8 @@ import cn.sf.w2.core.framework.jpa.demo.querydsl.support.QuerydslJpaRepositoryFa
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {
-		"cn.sf.w2.core.framework.jpa.demo.repository.**" }, repositoryFactoryBeanClass = QuerydslJpaRepositoryFactoryBean.class)
+@EnableJpaRepositories(basePackages = { "cn.sf.w2.core.framework.jpa.demo.repository.**",
+		"cn.sf.w2.core.infrastructure.repository" }, repositoryFactoryBeanClass = QuerydslJpaRepositoryFactoryBean.class)
 
 public class TestJpaConfiguration {
 

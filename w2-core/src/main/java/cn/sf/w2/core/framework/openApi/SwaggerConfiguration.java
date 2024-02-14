@@ -18,26 +18,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 @EnableSwagger2WebMvc
 @Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
+	/**
+	 * 定义分隔符
+	 */
+	private static final String SPLITOR = ";";
 
-    @Bean(value = "w2CoreSwaggerApi")
-    @Order(value = 1)
-    public Docket groupRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(groupApiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.sf.w2.core.framework.jpa.demo.controller"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+	@Bean(value = "w2CoreSwaggerApi")
+	@Order(value = 1)
+	public Docket groupRestApi() {
+		return new Docket(DocumentationType.SWAGGER_2).apiInfo(groupApiInfo()).select()
+				.apis(RequestHandlerSelectors.any()).paths(PathSelectors.any()).build();
+	}
 
-    private ApiInfo groupApiInfo(){
-        return new ApiInfoBuilder()
-                .title("w2核心服务-swagger-ui")
-                .description("<div style='font-size:14px;color:red;'>w2核心服务</div>")
-                .termsOfServiceUrl("https://www.w2.sf.cn/")
-                .contact("w2@sf.com")
-                .version("1.0")
-                .build();
-    }
+	private ApiInfo groupApiInfo() {
+		return new ApiInfoBuilder().title("w2核心服务-swagger-ui")
+				.description("<div style='font-size:14px;color:red;'>w2核心服务</div>")
+				.termsOfServiceUrl("https://www.w2.sf.cn/").contact("w2@sf.com").version("1.0").build();
+	}
 
 }

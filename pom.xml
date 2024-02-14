@@ -34,6 +34,10 @@
         <knife4j-version>4.4.0</knife4j-version>
 
         <jsonwebtoken-version>0.12.3</jsonwebtoken-version>
+
+        <j256-two-factor-auth-version>1.3</j256-two-factor-auth-version>
+
+        <nimbusds-jwt-version>9.29</nimbusds-jwt-version>
     </properties>
 
     <dependencyManagement>
@@ -108,23 +112,40 @@
             </dependency>
 
             <!--        JWT-->
+<!--            <dependency>-->
+<!--                <groupId>io.jsonwebtoken</groupId>-->
+<!--                <artifactId>jjwt-api</artifactId>-->
+<!--                <version>${jsonwebtoken-version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>io.jsonwebtoken</groupId>-->
+<!--                <artifactId>jjwt-impl</artifactId>-->
+<!--                <version>${jsonwebtoken-version}</version>-->
+<!--                <scope>runtime</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>io.jsonwebtoken</groupId>-->
+<!--                <artifactId>jjwt-jackson</artifactId>-->
+<!--                <version>${jsonwebtoken-version}</version>-->
+<!--                <scope>runtime</scope>-->
+<!--            </dependency>-->
+
+            <!-- https://mvnrepository.com/artifact/com.nimbusds/oauth2-oidc-sdk -->
             <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-api</artifactId>
-                <version>${jsonwebtoken-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-impl</artifactId>
-                <version>${jsonwebtoken-version}</version>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>oauth2-oidc-sdk</artifactId>
+                <version>${nimbusds-jwt-version}</version>
                 <scope>runtime</scope>
             </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/com.j256.two-factor-auth/two-factor-auth -->
             <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-jackson</artifactId>
-                <version>${jsonwebtoken-version}</version>
-                <scope>runtime</scope>
+                <groupId>com.j256.two-factor-auth</groupId>
+                <artifactId>two-factor-auth</artifactId>
+                <version>${j256-two-factor-auth-version}</version>
             </dependency>
+
 
         </dependencies>
     </dependencyManagement>
