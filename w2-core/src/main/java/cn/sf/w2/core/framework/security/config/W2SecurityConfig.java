@@ -109,8 +109,9 @@ public class W2SecurityConfig {
 
 	@Bean
 	public InMemoryUserDetailsManager userDetailsService() {
-		UserDetails userDetails = User.withUsername("admin").password("{noop}123456").roles("ADMIN").build();
-		return new InMemoryUserDetailsManager(userDetails);
+		UserDetails adminUserDetails = User.withUsername("admin").password("{noop}123456").roles("ADMIN","Manager").build();
+		UserDetails testUserDetails = User.withUsername("test").password("{noop}123456").roles("Test","Manager").build();
+		return new InMemoryUserDetailsManager(adminUserDetails,testUserDetails);
 	}
 
 	@Bean

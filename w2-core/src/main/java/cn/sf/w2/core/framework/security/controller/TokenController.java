@@ -1,9 +1,11 @@
 package cn.sf.w2.core.framework.security.controller;
 
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
@@ -13,18 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.Instant;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Api(tags = "Token测试")
 @RestController
 public class TokenController {
 
-    @Autowired
-    JwtEncoder encoder;
+	@Autowired
+	JwtEncoder encoder;
 
-    @PostMapping("/login")
-    public String login(Authentication authentication) {
-        Instant now = Instant.now();
-        long expiry = 36000L;
-        // @formatter:off
+	@PostMapping("/login")
+	public String login(Authentication authentication) {
+		Instant now = Instant.now();
+		long expiry = 36000L;
+		// @formatter:off
         String scope = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(" "));
@@ -36,14 +39,14 @@ public class TokenController {
                 .claim("scope", scope)
                 .build();
         // @formatter:on
-        return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
-    }
+		return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+	}
 
-    @PostMapping("/token")
-    public String token(Authentication authentication) {
-        Instant now = Instant.now();
-        long expiry = 36000L;
-        // @formatter:off
+	@PostMapping("/token")
+	public String token(Authentication authentication) {
+		Instant now = Instant.now();
+		long expiry = 36000L;
+		// @formatter:off
         String scope = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(" "));
@@ -55,11 +58,12 @@ public class TokenController {
                 .claim("scope", scope)
                 .build();
         // @formatter:on
-        return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
-    }
+		return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+	}
 
-    @PostMapping("/test")
-    public String test(Authentication authentication) {
-        return "测试";
-    }
+	@PostMapping("/test")
+	public String test(Authentication authentication) {
+		log.info("{}", authentication.getName());
+		return "测试" + authentication.getName();
+	}
 }
