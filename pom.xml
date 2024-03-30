@@ -15,6 +15,7 @@
         <module>w2-demo-nacos-consumer</module>
         <module>w2-quartz</module>
         <module>w2-doc</module>
+        <module>w2-workflow</module>
     </modules>
 
     <properties>
